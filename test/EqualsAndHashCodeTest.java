@@ -51,9 +51,9 @@ public class EqualsAndHashCodeTest {
     }
 
     Person John = new Person("John", 20);
-    Person Martin = new Person("Martin", 22);
+    Person Martin = new Person("John", 20);
     WrongPerson wrongJohn = new WrongPerson("wrongJohn", 20);
-    WrongPerson wrongMartin = new WrongPerson("wrongMartin", 22);
+    WrongPerson wrongMartin = new WrongPerson("wrongJohn", 20);
 
     @Test
     public void test_hashMap_overwrites_duplicate_data() {
@@ -61,7 +61,7 @@ public class EqualsAndHashCodeTest {
         map1.put(John, John);
         map1.put(Martin, Martin);
         int actual = map1.size();
-        assertEquals(2, actual);
+        assertEquals(1, actual);
     }
 
     @Test
@@ -70,7 +70,7 @@ public class EqualsAndHashCodeTest {
         people.add(wrongJohn);
         people.add(wrongMartin);
         int actual = people.size();
-        assertEquals(2, actual);
+        assertEquals(1, actual);
     }
 
     @Test(expected = ClassCastException.class)

@@ -12,6 +12,13 @@ public class StringTests {
     }
 
     @Test
+    public void test_wrongEquals_for_same_strings() throws Exception {
+        String a = "John";
+        String b = "Martin";
+        assertEquals(false, (a == b));
+    }
+
+    @Test
     public void test_equals_for_same_strings() throws Exception {
         String a = "John";
         String b = "John";
