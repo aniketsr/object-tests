@@ -65,18 +65,12 @@ public class EqualsAndHashCodeTest {
     }
 
     @Test
-    public void test_inserts_same_person_in_set_when_wrong_implementation_of_equals() {
+    public void test_Set_for_wrong_equals_inserts_same_person_in_set() {
         Set<WrongPerson> people = new HashSet<WrongPerson>();
         people.add(wrongJohn);
         people.add(wrongMartin);
         int actual = people.size();
-        assertEquals(1, actual);
+        assertEquals(2, actual);
     }
 
-    @Test(expected = ClassCastException.class)
-    public void test_insert_in_ArrayList_throws_exception() {
-        ArrayList list = new ArrayList<Person>();
-        Assert.assertTrue(list.add("hello"));
-        Person p1 = (Person) list.get(0);
-    }
 }

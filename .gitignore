@@ -1,6 +1,9 @@
-*.git
 *.idea
-out
 *.iml
-*.jar
-*.ear
+*.zip
+docs
+bin
+lib
+out
+build
+classes
